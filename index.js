@@ -18,7 +18,7 @@ admin.initializeApp({
 
 app.get('/', async (req, res) => {
   const token = [
-    'fkF4gUidSaCYtIaWHDUgMF:APA91bGUS-togYexMiKei-UYeeexEB88VzZggSwX-6uvRK6GYxRRnjxgQAxQ6ljv8-JvB2SRo7Sx1rIyBu1ALEgcqhVxNDG189_qza3fQ72SXPBvhIDouPD0MwvdZ2Q8FYPiW12DUufE',
+    '<DEVICE_TOKEN>',
   ];
 
   await admin.messaging().sendMulticast({
@@ -76,7 +76,7 @@ app.post('/registerToken', async (req, res) => {
 
   const alreadyToken = await prisma.deviceToken.findFirst({
     where: {
-      id: '1352a367-d9fd-4b14-90ef-a4eb23e8a8dd',
+      id: '<ID_DO_REGISTRO_DO_TOKEN>',
     },
   });
 
@@ -84,7 +84,7 @@ app.post('/registerToken', async (req, res) => {
     const registerToken = await prisma.deviceToken.create({
       data: {
         token,
-        userId: 'rheuwrhuewhrwer8we8cbuwcybwuybwuybe',
+        userId: '<ID_DO_REGISTRO_USUARIO>',
       },
     });
     console.log(registerToken);
